@@ -24,26 +24,24 @@ function createCORSRequest(method, url) {
     return xhr;
 }
 
-var xhr = createCORSRequest('GET', 'https://wp.nyu.edu/mcc014f18_tw_miniarchive/wp-json/wp/v2/posts?category=photos');
-if (!xhr) {
-    throw new Error('CORS not supported');
-}
-
-xhr.withCredentials = true;
-
-xhr.onload = function () {
-    var responseText = xhr.responseText;
-    alert(responseText);
-    // process the response.
-};
-
-xhr.onerror = function () {
-    alert('There was an error!');
-};
-
 $(document).ready(() => {
     $('button').click(() => {
-       xhr.send() 
+
+        var xhr = createCORSRequest('GET', 'https://wp.nyu.edu/mcc014f18_tw_miniarchive/wp-json/wp/v2/posts?category=photos');
+        if (!xhr) {
+            throw new Error('CORS not supported');
+        }
+
+        xhr.withCredentials = true;
+        xhr.onload = function () {
+            var responseText = xhr.responseText;
+            alert(responseText);
+            // process the response.
+        };
+        xhr.onerror = function () {
+            alert('There was an error!');
+        };
+        xhr.send()
+
     })
 })
-
