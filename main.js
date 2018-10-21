@@ -48,5 +48,11 @@ $(document).ready(() => {
         alert('There was an error!');
     };
     xhr.send()
+    
+    $('button').click(() => {
+        var xhr1 = createCORSRequest('POST', 'https://nyunews.com/wp-json/wp/v2/posts')
+        xhr1.withCredentials = true;
+        xhr1.send()
+    })
 
 })
