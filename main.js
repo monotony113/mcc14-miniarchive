@@ -24,24 +24,29 @@ function createCORSRequest(method, url) {
     return xhr;
 }
 
+var list = undefined
+
 $(document).ready(() => {
-    $('button').click(() => {
 
-        var xhr = createCORSRequest('GET', 'https://wp.nyu.edu/mcc014f18_tw_miniarchive/wp-json/wp/v2/posts?category=photos');
-        if (!xhr) {
-            throw new Error('CORS not supported');
-        }
+    var xhr = createCORSRequest('GET', 'https://wp.nyu.edu/mcc014f18_tw_miniarchive/wp-json/wp/v2/posts?categories=5');
+    if (!xhr) {
+        throw new Error('CORS not supported');
+    }
 
-        xhr.withCredentials = true;
-        xhr.onload = function () {
-            var responseText = xhr.responseText;
-            alert(responseText);
-            // process the response.
-        };
-        xhr.onerror = function () {
-            alert('There was an error!');
-        };
-        xhr.send()
+    xhr.withCredentials = true;
+    xhr.onload = function () {
+        var responseText = xhr.responseText;
+        list = JSON.parse(responseText);
+        list.forEach((item, id) => {
+            var newLi = document.createElement('li')
+            var newText = document.createTextNode(`${item.date} ${item.title.rendered}`)
+            newLi.appendChild(newText)
+            document.getElementById('photo-list').appendChild(newLi)
+        })
+    };
+    xhr.onerror = function () {
+        alert('There was an error!');
+    };
+    xhr.send()
 
-    })
 })
