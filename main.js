@@ -1,4 +1,4 @@
-/* global $ window document */
+/* global $ window document xhr alert XMLHttpRequest XDomainRequest */
 
 function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
@@ -41,4 +41,9 @@ xhr.onerror = function () {
     alert('There was an error!');
 };
 
-xhr.send();
+$(document).ready(() => {
+    $('button').click(() => {
+       xhr.send() 
+    })
+})
+
