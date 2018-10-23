@@ -2,8 +2,6 @@
 
 $(document).ready(() => {
 
-	"use strict";
-
 	var imageList = [];
 	var allImages = [];
 	var collections = {};
