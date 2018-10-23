@@ -169,7 +169,9 @@ $(document).ready(() => {
 					page++
 					getTags(page)
 				} else {
-                    
+                    Object.keys(tags).forEach((key, index) => {
+                        $("div.filter div.menu-2").append(`<button class="btn">${tags[key]}</button>`)
+                    })
                 }
 			});
 	}
