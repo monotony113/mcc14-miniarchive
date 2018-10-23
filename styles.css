@@ -5,15 +5,18 @@ body {
 }
 
 #photo-list {
-    display: flex;
+    border: solid black 2px;
+/*    display: flex;*/
     width: 90%;
     margin: auto;
 }
 
 .tile-container {
-    border: solid;
+    border: solid red 2px;
+/*
     width: 100px;
     height: 100px;
+*/
     overflow: hidden
 }
 
@@ -24,5 +27,21 @@ body {
 }
 
 .outline-hidden {
-    display: none
+    display: none;
+}
+
+#sorting-methods {
+    border: solid blue 2px;
+}
+
+#filters {
+    border: solid blue 2px;
+}
+
+#title-space {
+    border: solid green 2px;
+}
+
+#details {
+    border: solid yellow 2px;
 }
