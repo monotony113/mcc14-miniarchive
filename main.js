@@ -17,7 +17,7 @@ $(document).ready(() => {
                 var newLi = document.createElement('li')
                 var newP = document.createElement('p')
                 var newA = document.createElement('a')
-                newA.setAttribute('href', item.guid.rendered)
+                newA.setAttribute('href', item.link)
 
                 var newText = document.createTextNode(item.title.rendered)
                 newA.appendChild(newText)
