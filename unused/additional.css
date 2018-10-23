@@ -1,0 +1,32 @@
+#main-navigator {
+	border: none;
+	min-width: 100%;
+	min-height: 720px;
+}
+
+.page-template-front-page .entry-outer {
+	margin: auto;
+	padding-left: 0;
+	padding-right: 0;
+	max-width: 95%;
+}
+body.page-id-15 .entry-content {
+	max-width: 100%
+}
+
+body.page-id-15 .entry-title {
+	display: none
+}
+
+body.page-id-15 .site-info, body.page-id-15 .site-footer {
+	display: none
+}
+
+body.page-id-15 .site-header {
+	padding-bottom: 1em
+}
+
+body.page-id-15 article {
+	padding-bottom: 0;
+	margin-bottom: 0
+}
