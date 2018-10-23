@@ -4,7 +4,25 @@ body {
     background-color: white;
 }
 
+#photo-list {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.tile-container {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    overflow: hidden
+}
+
+.tile-container .image-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .outline-hidden {
     display: none
 }
-
