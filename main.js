@@ -18,7 +18,7 @@ $(document).ready(() => {
                 var newP = document.createElement('p')
                 var newA = document.createElement('a')
                 newA.setAttribute('href', item.link)
-
+                newA.setAttribute('target', '_blank')
                 var newText = document.createTextNode(item.title.rendered)
                 newA.appendChild(newText)
                 newP.appendChild(newA)
