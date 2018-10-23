@@ -197,10 +197,10 @@ $(document).ready(() => {
 	};
 	getPosts(1);
 
-    $("#photo-list").on("mouseover", ".tile-container", () => {
+    $("#photo-list").on("mouseover", ".tile-container", (event) => {
         $("#title-space").text($(event.target).closest(".tile-container").find(".image-title").text());
         $(event.target).closest(".tile-container").find(".info-content").clone().removeClass("hidden").appendTo("#details");
-    }).on("mouseout", ".tile-container", () => {
+    }).on("mouseout", ".tile-container", (event) => {
         $("#title-space").text("-");
         $("#details").empty();
     });
