@@ -64,7 +64,6 @@ $(document).ready(() => {
 				});
 		});
 	};
-
 	function getAllImagesFrom(response) {
 		return new Promise((resolve, reject) => {
 			console.log(response.data);
@@ -88,11 +87,9 @@ $(document).ready(() => {
 			fillImageTile(item);
 		})
 	};
-
 	function sortList(imageList, field, order) {
 
 	}
-
 	function filterList(field, keyword) {
 
 	}
@@ -115,7 +112,6 @@ $(document).ready(() => {
 				});
 		})
 	};
-
 	function createImageTile(imagePost) {
 		var tileContainer = $("<div>").addClass("tile-container").attr('id', imagePost.id);
 		var image = $("<img>").addClass("image-content");
@@ -124,7 +120,6 @@ $(document).ready(() => {
 		var tile = $(tileContainer).append(title).append(info).append(image);
 		return tile;
 	};
-
 	function fillImageTile(imagePost) {
 		$(`#${imagePost.id} .image-title`).text(imagePost.title);
 		var dateString = imagePost.metadata.date ? imagePost.metadata.date.toDateString() : "Unknown date";
@@ -154,8 +149,6 @@ $(document).ready(() => {
                 }
 			});
 	}
-	getCategories(1);
-
 	function getTags(page) {
 		fetchPosts(`https://wp.nyu.edu/mcc014f18_tw_miniarchive/wp-json/wp/v2/tags?page=${page}&per_page=${itemsPerPage}`)
 			.then((response) => {
@@ -173,8 +166,6 @@ $(document).ready(() => {
                 }
 			});
 	}
-	getTags(1);
-
 	function getPosts(page) {
 		fetchPosts(`https://wp.nyu.edu/mcc014f18_tw_miniarchive/wp-json/wp/v2/posts?page=${page}&per_page=${itemsPerPage}`)
 			.then((response) => {
@@ -195,6 +186,9 @@ $(document).ready(() => {
 				}
 			})
 	};
+
+    getCategories(1);
+    getTags(1);
 	getPosts(1);
 
     $("#photo-list").on("mouseover", ".tile-container", (event) => {
