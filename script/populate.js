@@ -17,21 +17,21 @@ $(document).ready(() => {
 		this.metadata = {
 			date: (() => {
 				try {
-					return new Date(contentText.match(/Date documented:\n(.*)\n/)[1])
+					return new Date(contentText.match(/Date documented\n(.*)\n/)[1])
 				} catch (err) {
 					return null
 				}
 			})(),
 			location: (() => {
 				try {
-					return contentText.match(/Location:\n(.*)\n/)[1]
+					return contentText.match(/Location\n(.*)\n/)[1]
 				} catch (err) {
 					return null
 				}
 			})(),
 			desc: (() => {
 				try {
-					return contentText.match(/Description:\n(.*)\n/)[1]
+					return contentText.match(/Description\n(.*)\n/)[1]
 				} catch (err) {
 					return null
 				}
