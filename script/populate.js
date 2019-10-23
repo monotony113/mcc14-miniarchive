@@ -41,6 +41,7 @@ $(document).ready(() => {
 		this.metadata.tags = tags;
 		this.pageUrl = pageUrl;
 		this.imgPostUrl = imgPostUrl;
+		console.log(this.metadata)
 	};
 
 	function fetchPosts(url) {
