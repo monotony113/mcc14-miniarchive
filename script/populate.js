@@ -17,6 +17,7 @@ $(document).ready(() => {
 		this.metadata = {
 			date: (() => {
 				try {
+					console.log(contentText.match(/Date documented\n(.*)\n/)[1])
 					return new Date(contentText.match(/Date documented\n(.*)\n/)[1])
 				} catch (err) {
 					return null
