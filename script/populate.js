@@ -11,8 +11,9 @@ $(document).ready(() => {
 	function ImagePost(id, title, content, categories, tags, pageUrl, imgPostUrl) {
 		this.id = id;
 		this.title = title;
-		var contentText = $(content).prop("innerText");;
+		var contentText = $(content).prop("innerText")
 		console.log(contentText)
+		console.log(content)
 		this.metadata = {
 			date: (() => {
 				try {
