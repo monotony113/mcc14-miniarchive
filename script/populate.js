@@ -12,6 +12,7 @@ $(document).ready(() => {
 		this.id = id;
 		this.title = title;
 		var contentText = $(content).prop("innerText");;
+		console.log(contentText)
 		this.metadata = {
 			date: (() => {
 				try {
