@@ -13,7 +13,7 @@ $(document).ready(() => {
 		this.title = title;
 		var contentText = $(content).prop("innerText")
 		console.log(contentText)
-		console.log($(content).prop('innerHTML'))
+		console.log($(content)[2])
 		this.metadata = {
 			date: (() => {
 				try {
