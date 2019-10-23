@@ -11,27 +11,27 @@ $(document).ready(() => {
 	function ImagePost(id, title, content, categories, tags, pageUrl, imgPostUrl) {
 		this.id = id;
 		this.title = title;
-		var contentText = $(content).prop("innerText")
+		var contentText = $(content)[2].innerText
 		console.log(contentText)
-		console.log($(content)[2])
+		console.log($(content)[2].innerText)
 		this.metadata = {
 			date: (() => {
 				try {
-					return new Date(contentText.match(/Recorded:.(.*)/)[1])
+					return new Date(contentText.match(/Date documented:\n(.*)\n/)[1])
 				} catch (err) {
 					return null
 				}
 			})(),
 			location: (() => {
 				try {
-					return contentText.match(/Location:.(.*)/)[1]
+					return contentText.match(/Location:\n(.*)\n/)[1]
 				} catch (err) {
 					return null
 				}
 			})(),
 			desc: (() => {
 				try {
-					return contentText.match(/Description:.(.*)/)[1]
+					return contentText.match(/Description:\n(.*)\n/)[1]
 				} catch (err) {
 					return null
 				}
